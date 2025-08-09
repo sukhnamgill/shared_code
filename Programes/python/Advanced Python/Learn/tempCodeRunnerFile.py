@@ -1,0 +1,1 @@
+self.view.defaultFrameGraph().setClearColor(QtGui.QColor("#bdbdbd"))

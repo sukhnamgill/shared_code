@@ -1,0 +1,2 @@
+
+        self.st.setCurrentIndex(i)
