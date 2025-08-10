@@ -1,5 +1,5 @@
 class Library{
-    int indx_remove=0;
+    
     
     int len=0;
     
@@ -25,12 +25,14 @@ class Library{
     }
     //removing books
     void remove_book (String name){
+        int indx_remove=-1;
         
         for(String i :books){
+            indx_remove=indx_remove+1;
             if(i==name){
                 books[indx_remove]=null;
                 System.out.println(name +" is deletd from book list");
-                indx_remove=indx_remove+1;
+                
             }
             
         }
@@ -78,20 +80,21 @@ public class Practice_set_2{
         s1.add_book("Hindi");
         s1.add_book("english");
         s1.add_book("maths");
+        s1.add_book("science");
+        s1.add_book("punjabi");
+
+        s1.remove_book("science");
+        s1.remove_book("punjabi");
         
         s1.issue_book("maths");
         s1.issue_book("Hindi");
         // s1.issue_book("english");
 
-        
-        
 
         s1.return_book("Hindi");
-        s1.return_book("maths");
+        // s1.return_book("maths");
 
         // s1.return_book("Hindi");
-
-
         // s1.add_book("French");
         s1.print_details();
     }
