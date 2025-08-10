@@ -1,6 +1,8 @@
 class Library{
+    int indx_remove=0;
+    int indx=-1;
     int len=0;
-    int issue_book_len=0;
+    
     String [] books=new String[10];
     String [] issued=new String [10];
     //adding books
@@ -12,7 +14,7 @@ class Library{
     }
     //printing books list
     void print_details(){
-        System.out.println("_______________\nList of books");
+        System.out.println("_______________\nList of Available books");
         for (String i :books){
             if (i!= null){
         System.out.println("-> "+i);}}
@@ -23,25 +25,42 @@ class Library{
     }
     //removing books
     void remove_book (String name){
-        int indx=0;
+        
         for(String i :books){
             if(i==name){
-                books[indx]=null;
+                books[indx_remove]=null;
                 System.out.println(name +" is deletd from book list");
-                indx=indx+1;
+                indx_remove=indx_remove+1;
             }
             
         }
     }
     void issue_book(String name){
+        int issue_book_len=-1;
         for(String i: books){
+            issue_book_len=issue_book_len+1;
             if(i==name){
                 System.out.println(name+" book is issued");
                 issued[issue_book_len]=name;
-                issue_book_len=issue_book_len+1;
-                remove_book(name);
+                books[issue_book_len]=null;
+                }
+                else{
+                    // System.out.println("issu not");
+                }
+        }
+    }
+    void return_book(String name){
+        
+        for(String i: issued){
+            indx=indx+1;
+            if(i==name){
+                add_book(name);
+                System.out.println(name+" book is recived");
+                issued[indx]=null;
+
 
             }
+
         }
     }
 
@@ -54,10 +73,21 @@ public class Practice_set_2{
     public static void main(String[] args){
         System.out.println("Sukhnam singh gill");
         Library s1=new Library();
+        //adding books
         s1.add_book("Hindi");
         s1.add_book("english");
-        // s1.remove_book("Hindi");
+        s1.add_book("maths");
+        
+        s1.issue_book("maths");
         s1.issue_book("Hindi");
+        // s1.issue_book("english");
+
+        
+        
+
+        s1.return_book("Hindi");
+
+        // s1.return_book("Hindi");
 
 
         // s1.add_book("French");
