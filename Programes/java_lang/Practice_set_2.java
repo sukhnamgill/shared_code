@@ -1,6 +1,8 @@
 class Library{
     int len=0;
+    int issue_book_len=0;
     String [] books=new String[10];
+    String [] issued=new String [10];
     //adding books
     void add_book(String name){
         books[len]=name;
@@ -14,6 +16,10 @@ class Library{
         for (String i :books){
             if (i!= null){
         System.out.println("-> "+i);}}
+        System.out.println("_______________\nList of issued books");
+         for (String n :issued){
+            if (n!= null){
+        System.out.println("-> "+n);}}
     }
     //removing books
     void remove_book (String name){
@@ -25,6 +31,17 @@ class Library{
                 indx=indx+1;
             }
             
+        }
+    }
+    void issue_book(String name){
+        for(String i: books){
+            if(i==name){
+                System.out.println(name+" book is issued");
+                issued[issue_book_len]=name;
+                issue_book_len=issue_book_len+1;
+                remove_book(name);
+
+            }
         }
     }
 
@@ -39,7 +56,9 @@ public class Practice_set_2{
         Library s1=new Library();
         s1.add_book("Hindi");
         s1.add_book("english");
-        s1.remove_book("Hindi");
+        // s1.remove_book("Hindi");
+        s1.issue_book("Hindi");
+
 
         // s1.add_book("French");
         s1.print_details();
