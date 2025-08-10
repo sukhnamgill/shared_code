@@ -1,6 +1,6 @@
 class Library{
     int indx_remove=0;
-    int indx=-1;
+    
     int len=0;
     
     String [] books=new String[10];
@@ -50,6 +50,7 @@ class Library{
         }
     }
     void return_book(String name){
+        int indx=-1;
         
         for(String i: issued){
             indx=indx+1;
@@ -86,6 +87,7 @@ public class Practice_set_2{
         
 
         s1.return_book("Hindi");
+        s1.return_book("maths");
 
         // s1.return_book("Hindi");
 
