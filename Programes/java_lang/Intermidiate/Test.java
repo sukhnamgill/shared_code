@@ -1,11 +1,17 @@
 import math.average.Statics;
-
-public class Test{
+class Z extends Statics{
+    Statics s1=new Statics();
+    void print_private(){
+        System.out.println(sex);
+    }
+}
+public class Test extends Statics{
     public static void main(String[] args){
         
         System.out.println("use");
-        Statics s1=new Statics();
-        int[] arr={5,6,7,8,3,4,5,6};
-        s1.average(arr);
+        Z s1=new Z();
+        // int[] arr={5,6,7,8,3,4,5,6};
+        // s1.average(arr);
+        s1.print_private();
     }
 }
