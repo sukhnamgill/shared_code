@@ -1,23 +1,28 @@
 class Myexception extends Exception{
-    // @Override
-    public static void ArithmeticException(){
-        System.out.println("haha");
-    }
-    public static void InvalidArgument(){
-        
-        System.out.println("hehe");
+    public Myexception(String name){
+        super(name);
     }
 }
 public class Practice14 {
+    public static void array(int [] arr,int get_element)throws Myexception{
+        if(arr.length<=get_element){
+            throw new Myexception("index is too high");
+        }
+        else{
+            System.out.println(arr[get_element]);
+        }
+    }
     public static void sum(int a,int b) throws Myexception {
-        Myexception ob1=new Myexception();
+        Myexception ob1=new Myexception("");
+        
         if(a<0 || b<0){
-            throw ob1.InvalidArgument();
+            ob1.printStackTrace();
+            throw new Myexception("Invalid argument");
             
             
         }
         else if(a==0 || b==0){
-            throw ob1.ArithmeticException();
+            throw new Myexception("Can not divide by zero");
         }
         else{
             System.out.println("Answer is "+a/b);
@@ -45,12 +50,19 @@ public class Practice14 {
 
         // }
         //write a programe to print haha at arithmetic operation failure and hehe during illegal argument exception
-        try{
-            sum(-3,0);
+        // try{
+        //     sum(-1,0);
 
+        // }
+        // catch(Exception e){
+        //     System.out.println("The error is (sukhnam)"+e);
+        // }
+        int [] ages={1,2,3,4,5,6};
+        try{
+            array(ages, 6);
         }
         catch(Exception e){
-            System.out.println("The error is (sukhnam)"+e);
+            System.out.println("The error is"+e);
         }
 
     }
