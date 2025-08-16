@@ -1,4 +1,4 @@
-package sukhnam;
+// package sukhnam;
 
 public class A{
     int value=5;
