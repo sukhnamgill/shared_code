@@ -17,6 +17,7 @@ int main(){
     cout<<vec.size();
     cout<<"printing array"<<endl;
     reverse(vec);
+    //printing values of array
     for(auto i:vec){
         cout<<i<<endl;
     }
